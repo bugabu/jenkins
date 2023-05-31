@@ -5,7 +5,4 @@ node {
 	stage('Test') {
 		echo "Test"
 	}
-	stage('Post-Test') {
-		echo "Post-Test"
-	}
 }
