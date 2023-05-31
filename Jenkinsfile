@@ -1,8 +1,14 @@
-node {
+agent { docker { image  'node:13.8' } }
+stages {
 	stage('Build') {
-		echo "Build"
+		steps {
+			sh 'node --version'
+			echo "Build"
+		}
 	}
 	stage('Test') {
-		echo "Test"
+		steps {
+			echo "Test"
+		}
 	}
 }
