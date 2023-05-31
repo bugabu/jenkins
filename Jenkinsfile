@@ -8,7 +8,7 @@ stages {
 	}
 	stage('Test') {
 		steps {
-			echo "Test"
+			echo "Test1"
 		}
 	}
 }
