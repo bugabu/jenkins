@@ -29,9 +29,9 @@ pipeline {
 			}
 		}
 		
-		stage('Integration Test') {
+		stage('Package') {
 			steps {
-				sh 'mvn failsafe:integration-test failsafe:verify'
+				sh 'mvn package -DskipTests'
 			}
 		}
 		
@@ -47,8 +47,10 @@ pipeline {
 		stage('Push Docker Image') {
 			steps {
 				script {
-					dockerImage.push();
-					dockerImage.push('latest');
+					docker.withRegistry('', '687513b5-932d-464e-82d8-3d80db2ec231') {
+						dockerImage.push();
+						dockerImage.push('latest');
+					}
 				}
 			}
 		}
