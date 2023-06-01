@@ -8,7 +8,6 @@ pipeline {
 	stages {
 		stage('Checkout') {
 			steps {
-				sh 'node --version'
 				sh 'mvn --version'
 				sh 'docker version' 
 				echo "Build"
