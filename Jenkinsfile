@@ -6,6 +6,7 @@ pipeline {
 				sh 'node --version'
 				echo "Build"
 				echo "BUILD NUMBER - $env.BUILD_NUMBER"
+				echo "BUILD ID - $env.BUILD_ID"
 			}
 		}
 		stage('Test') {
